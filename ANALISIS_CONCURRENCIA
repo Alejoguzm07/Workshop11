@@ -1,0 +1,5 @@
+1. Las condiciones de carrera tienen que ver con el acceso o modificación de los recursos en el API, cuando se hace el GET de algun recurso se debe acceder a la lista de recursos, cuando se registran recursos también se hace uso de la lista, en general las funcioines hacen uso o acceden a la lista, por lo cual se corre el riesgo de que esto ocurra de forma concurrente.
+
+2. Las zonas críticas están en el acceso a estructuras de datos en las cuales se almacenen recursos a ser consumidos o recursos a registrarse en la API. 
+
+3. Se solucionó mediante el uso de colecciones atómicas o sincronizadas que manejaran el acceso concurrente a los recursos, de modo que los GET o POST que se le hicieran a la API no generaran errores. 
