@@ -7,19 +7,18 @@ var module = (function () {
   };
   var printSeats = function (fun) {
     var seats = fun.seats;
-    console.log(seats);
-    for (var i = 0; i < seats; i++) {
+    for (var i = 0; i < seats.length; i++) {
         var fila = fun.seats[i];
-        var filaTxt = '<td>';
+        var filaTxt = '<li>';
         for (var j = 0; j < fila.length; j++) {
             if(fila[j]){
-                filaTxt += " O ";
+                filaTxt += '  O  ';
             }else{
-                filaTxt += " X ";
+                filaTxt += '  X  ';
             };
         };
-        filaTxt += '</td>';
-        console.log(filaTxt);
+        filaTxt += '</li>';
+        $("#sillas").append(filaTxt);
     };
   };
   var updateFunctionsTable = function(){    
@@ -65,11 +64,12 @@ var module = (function () {
         this.cinemaName = newName;
     },
     showSeats: function (cinemaName,date,movieName) {
+        $('#sillas').empty();
         apiclient.getFunction(cinemaName,date,movieName,printSeats);
     },
     saveElements:saveElements,
     updateFunctions:function (){
-      $('#funciones').find('tbody').empty();    
+      $('#funciones').find('tbody').empty();
       var cinemaName = $('#cinemaName').val();      
       if(cinemaName != ''){
         //apimock.getCinemaByName(cinemaName,mapFunctions);
