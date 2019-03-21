@@ -9,6 +9,7 @@
       href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="js/apimock.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/apiclient.js"></script>
 </head>
 
 <body>
@@ -18,29 +19,22 @@
     </div>
 </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <input id="cinemaName" type="text" class="form-control" placeholder="Cinema Name" aria-label="Cinema Name" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Search</button>
+                <button id="buscar" class="btn btn-outline-secondary" type="button" onclick="module.updateFunctions()">Search</button>
             </div>
         </div>
 
-        <table header="cinemaPrueba" >
+        <table id="funciones" header="cinemaPrueba" >
             <thead>
             <tr>
                 <th scope="col">Cinema</th>
                 <th scope="col">Function</th>
                 <th scope="col">Seats</th>
                 <th scope="col">Date</th>
+                <th scope="col">Buy Ticket</th>
             </tr>
-            </thead>
-            <tr>
-                <td >Cinema1</td>
-                <td>1</td>
-                <td>5</td>
-                <td>25-2-19</td>
-            </tr>
-
-
+            </thead><tbody></tbody>
         </table>
 
 </body>
