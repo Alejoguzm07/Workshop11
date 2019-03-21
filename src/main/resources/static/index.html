@@ -13,19 +13,11 @@
 </head>
 
 <body>
-<div class="container"><br/>
-    <div class="alert alert-success">
-        <strong>Success!</strong> It is working as we expected.
-    </div>
-</div>
         <div class="input-group mb-3">
             <input id="cinemaName" type="text" class="form-control" placeholder="Cinema Name" aria-label="Cinema Name" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button id="buscar" class="btn btn-outline-secondary" type="button" onclick="module.updateFunctions()">Search</button>
-            </div>
+            <button id="buscar" class="btn btn-outline-secondary" type="button" onclick="module.updateFunctions()">Search</button>
         </div>
-
-        <table id="funciones" header="cinemaPrueba" >
+        <table class="table table-dark" id="funciones" header="cinemaPrueba" >
             <thead>
             <tr>
                 <th scope="col">Cinema</th>
